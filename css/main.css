@@ -1,7 +1,11 @@
 body{
   background-color: #444;
 }
-.csvfield, .jsonfield{
+
+header{
+  background-color: #fff;
+}
+.csvfield{
   border: 1px solid #000;
   border-radius: 15px;
   background-color: #fff;

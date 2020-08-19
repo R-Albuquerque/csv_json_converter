@@ -1,4 +1,4 @@
-$("#tst").html("HELLO");
+
 $("#otherDelimiter,#otherSeparator").hide();
 $('input[name=delimiter]').change(function(){
   if($('input[name=delimiter]:checked').val() != "other"){
@@ -16,6 +16,12 @@ $('input[name=separator]').change(function(){
     $("#otherSeparator").show();
   }
 });
+
+$("#csvtext").attr("placeholder" , "Example:\n"+
+                  "\"Id\",\"Name\",\"Age\"\n"+
+                  "\"4\",\"Carl\",21\"\n"+
+                  "\"5\",\"Maria\",\"37\"\n"+
+                  "\"6\",\"Ravi\",\"23\"...");
 // if($('input[name=radioName]:checked', '#csvOptions').val() != "other"){
 //   $("#otherDelimiter").hide();
 // }
