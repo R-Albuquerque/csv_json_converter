@@ -16,6 +16,19 @@ header{
     margin-left: 10%;
     margin-right: 10%;
 }
+
+.csvfileform{
+  border: 1px solid #000;
+  border-radius: 15px;
+  width: 30%;
+  margin: 0 auto;
+  padding: 1%;
+}
+.csvfileform input{
+    position: relative;
+    left: 18%;
+}
+
 .convertBtn{
   margin-left: 10%;
   margin-right: 10%;

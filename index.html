@@ -17,53 +17,78 @@
 
     <div class="csvfield text-center" id="csvfield">
 
-        <form class="" id="csvOptions">
+
           <h3>CSV</h3>
-          <div class="delimfield">
-            <hr>
-            <strong>Delimiter: </strong><br>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="delimiter" id="delimiterRadio1" value="," checked="checked">
-              <label class="form-check-label" for="inlineRadio1">Comma( , )</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="delimiter" id="delimiterRadio2" value="|">
-              <label class="form-check-label" for="inlineRadio2">Pipe( | )</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="delimiter" id="delimiterRadio3" value="other">
-              <label class="form-check-label" for="inlineRadio3">Other</label>
-            </div>
-            <div class="form-check form-check-inline">
 
-              <input class="form-check-input" type="text" name="otherdelimiter" id="otherDelimiter" placeholder="Which?">
-            </div>
+          <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="inputType btn btn-secondary active">
+              <input type="radio" name="inputType" id="manual" value="manual" autocomplete="off" checked> Manual input
+            </label>
+            <label class="inputType btn btn-secondary">
+              <input type="radio" name="inputType" id="fileinput" value="fileinput" autocomplete="off"> File Input
+            </label>
           </div>
-          <hr>
-          <div class="delimfield">
-            <hr>
-            <strong>Text delimiter: </strong><br>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="separator" id="separatorRadio1" value='"' checked="checked">
-              <label class="form-check-label" for="inlineRadio1">Double Quotes( " )</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="separator" id="separatorRadio2" value="'">
-              <label class="form-check-label" for="inlineRadio2">Single Quotes( ' )</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="separator" id="separatorRadio3" value="other">
-              <label class="form-check-label" for="inlineRadio3">Other</label>
-            </div>
-            <div class="form-check form-check-inline">
+          <br><br>
 
-              <input class="form-check-input" type="text" name="otherSeparator" id="otherSeparator" placeholder="Which?">
+          <form class="" id="csvfileform">
+            <div class="form-group csvfileform text-center">
+              <label for="">CSV file upload</label>
+              <input type="file" accept=".csv" name="csvfileinput" class="form-control-file" id="csvfileinput">
+              <span id="filetypeWarn"></span>
             </div>
-          </div>
-          <hr>
-        </form>
-        <textarea name="csvtext" id="csvtext" rows="8" placeholder="Cole o CSV aqui..."></textarea>
-    </div>
+          </form>
+
+
+            <form class="" id="csvOptions">
+            <div class="" id="manualinputform">
+            <hr>
+              <div class="delimfield">
+              <strong>Delimiter: </strong><br>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="delimiter" id="delimiterRadio1" value="," checked="checked">
+                <label class="form-check-label" for="inlineRadio1">Comma( , )</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="delimiter" id="delimiterRadio2" value="|">
+                <label class="form-check-label" for="inlineRadio2">Pipe( | )</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="delimiter" id="delimiterRadio3" value="other">
+                <label class="form-check-label" for="inlineRadio3">Other</label>
+              </div>
+              <div class="form-check form-check-inline">
+
+                <input class="form-check-input" type="text" name="otherdelimiter" id="otherDelimiter" placeholder="Which?">
+              </div>
+            </div>
+            <hr>
+            <div class="delimfield">
+              <hr>
+              <strong>Text delimiter: </strong><br>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="separator" id="separatorRadio1" value='"' checked="checked">
+                <label class="form-check-label" for="inlineRadio1">Double Quotes( " )</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="separator" id="separatorRadio2" value="'">
+                <label class="form-check-label" for="inlineRadio2">Single Quotes( ' )</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="separator" id="separatorRadio3" value="other">
+                <label class="form-check-label" for="inlineRadio3">Other</label>
+              </div>
+              <div class="form-check form-check-inline">
+
+                <input class="form-check-input" type="text" name="otherSeparator" id="otherSeparator" placeholder="Which?">
+              </div>
+            </div>
+            <hr>
+          </form>
+          <textarea name="csvtext" id="csvtext" rows="8" placeholder="Cole o CSV aqui..."></textarea>
+
+            </div>
+
+            </div>
     <br>
     <div class="convertBtn">
       <button type="button" class="btn btn-primary btn-lg btn-block" id="convertButton">Convert</button>

@@ -1,3 +1,5 @@
+
+//  Function to convert the csv input to an array
 function arrayFromCSV(csvInput, delimiter, field_delimiter){
 
     fd = "\\"+field_delimiter;
@@ -29,8 +31,10 @@ console.log(delimiter);
     }
     return (dados);
 }
+// ==========================================================================
 
-function do_conversion(csv) {
+//  function to convert the array
+function do_conversion(csvArray) {
 
     var chosen_del, chosen_field_sep;
 
@@ -49,17 +53,17 @@ function do_conversion(csv) {
     }
 
     var chosen_field_sep = $('input[name=separator]:checked').val();
-    var lista = arrayFromCSV(csv, chosen_del, chosen_field_sep);
-    var objArray = [];
+    var lista = arrayFromCSV(csvArray, chosen_del, chosen_field_sep);
+    var resultArray = [];
     for (var i = 1; i < lista.length; i++) {
-        objArray[i - 1] = {};
+        resultArray[i - 1] = {};
         for (var j = 0; j < lista[0].length && j < lista[i].length; j++) {
             var chave = lista[0][j];
-            objArray[i - 1][chave] = lista[i][j]
+            resultArray[i - 1][chave] = lista[i][j]
         }
     }
 
-    var jsonOutput = JSON.stringify(objArray);
+    var jsonOutput = JSON.stringify(resultArray);
     var resultado = jsonOutput.replace(/},/g, "},\r\n");
 
     return resultado;
