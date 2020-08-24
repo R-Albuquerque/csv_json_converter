@@ -1,31 +1,43 @@
 
 
 $("#otherDelimiter,#otherSeparator").hide();
-$("#csvfileform").hide();
+$("#csvfileinput").hide();
 
 //  Check if user choose to input CSV data manually or as a file
 $('input[name=inputType]').change(function(){
+  $("#csvtextfield, #fileInput").val("");
   if($('input[name=inputType]:checked').val() == "manual"){
-    $("#csvfileform").hide();
-    $("#manualinputform").show();
+    $("#csvfileinput").hide();
+    $("#csvtextfield").show();
   }
   else {
-    $("#csvfileform").show();
-    $("#manualinputform").hide();
+    $("#csvfileinput").show();
+    $("#csvtextfield").hide();
   }
 });
 
 // File input validation
 
-var fileExtensionCheck = new RegExp("(.*?)\.(csv)$");
-
-$("input[name=csvfileinput]").change(function() {
-  if (!(fileExtensionCheck.test(el.value.toLowerCase()))) {
-    el.value = '';
-    $("#filetypeWarn").html("Only .csv files are accepted")
+$('#csvfileinput').on('change', function () {
+  var fileInput = document.getElementById("fileInput");
+  var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.csv|.txt)$/;
+  if (regex.test(fileInput.value.toLowerCase())) {
+      if (typeof (FileReader) != "undefined") {
+          var reader = new FileReader();
+          reader.onload = function (e) {
+              var table = document.createElement("table");
+              var rows = e.target.result.split("\n");
+              console.log(e.target.result);
+              $("#csvtextfield").val(e.target.result);
+              $("#csvtextfield").show();
+          }
+          reader.readAsText(fileInput.files[0]);
+      }
   }
-})
-
+  else {
+      $("#filetypeWarn").html("Only .csv files are accepted");
+  }
+});
 // Delimiter options
 $('input[name=delimiter]').change(function(){
   if($('input[name=delimiter]:checked').val() != "other"){

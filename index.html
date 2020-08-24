@@ -31,16 +31,9 @@
           <br><br>
 
           <form class="" id="csvfileform">
-            <div class="form-group csvfileform text-center">
-              <label for="">CSV file upload</label>
-              <input type="file" accept=".csv" name="csvfileinput" class="form-control-file" id="csvfileinput">
-              <span id="filetypeWarn"></span>
-            </div>
-          </form>
 
 
-            <form class="" id="csvOptions">
-            <div class="" id="manualinputform">
+            <div class="" >
             <hr>
               <div class="delimfield">
               <strong>Delimiter: </strong><br>
@@ -83,11 +76,22 @@
               </div>
             </div>
             <hr>
-          </form>
-          <textarea name="csvtext" id="csvtext" rows="8" placeholder="Cole o CSV aqui..."></textarea>
 
-            </div>
 
+          <div class="form-group csvfileform text-center" id="csvfileinput">
+            <label for="">CSV file upload</label>
+            <input type="file" accept=".csv" name="csvfileinput" class="form-control-file" id="fileInput" />
+            <span id="filetypeWarn"></span>
+            <br>
+            <span>File contents will appear bellow</span>
+          </div>
+          <hr>
+
+          <textarea name="csvtext" id="csvtextfield" rows="8" placeholder="Cole o CSV aqui..."></textarea>
+
+        </div>
+        </form>
+<!-- ss -->
             </div>
     <br>
     <div class="convertBtn">
@@ -99,6 +103,8 @@
       <h3>JSON RESULT:</h3>
       <div class="jsonfield">
         <textarea name="jsontext" rows="8" id="jsontext" value='1","joao","32"2,maria,54'></textarea>
+        <hr>
+        <button type="button" class="btn btn-secondary" name="button" id="dowloadbtn">Download result</button>
       </div>
     </div>
     <br>

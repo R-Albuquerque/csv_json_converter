@@ -3,8 +3,9 @@
 function arrayFromCSV(csvInput, delimiter, field_delimiter){
 
     fd = "\\"+field_delimiter;
-console.log(fd);
-console.log(delimiter);
+//     console.log(csvInput);
+// console.log(field_delimiter);
+// console.log(delimiter);
     var padrao_campos = new RegExp((
     // delimitador
     "(\\" + delimiter + "|\\r?\\n|\\r|^)" +
@@ -71,8 +72,13 @@ function do_conversion(csvArray) {
 
 $("#convertButton").click(function() {
 
-    var csv = $("#csvtext").val();
+    var csv = $("#csvtextfield").val();
     var jsonResult = do_conversion(csv);
     $("#jsontext").val(jsonResult);
 
+});
+
+$("#downloadbtn").click(function() {
+    var toDown = $("#jsontext").val();
+    window.open("data:text/json;charset=utf-8," + escape(json))
 });
