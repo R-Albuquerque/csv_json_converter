@@ -81,7 +81,9 @@
           <div class="form-group csvfileform text-center" id="csvfileinput">
             <label for="">CSV file upload</label>
             <input type="file" accept=".csv" name="csvfileinput" class="form-control-file" id="fileInput" />
-            <span id="filetypeWarn"></span>
+            <span id="filetypeWarn" class="redWarn"></span>
+            <br>
+            <small><a href="">Load sample data</a></small>
             <br>
             <span>File contents will appear bellow</span>
           </div>
@@ -104,7 +106,7 @@
       <div class="jsonfield">
         <textarea name="jsontext" rows="8" id="jsontext" value='1","joao","32"2,maria,54'></textarea>
         <hr>
-        <button type="button" class="btn btn-secondary" name="button" id="dowloadbtn">Download result</button>
+        <button type="button" class="btn btn-secondary" name="button" id="downloadbtn">Download result</button>
       </div>
     </div>
     <br>

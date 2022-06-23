@@ -79,6 +79,12 @@ $("#convertButton").click(function() {
 });
 
 $("#downloadbtn").click(function() {
+    console.log("Downloading result");
     var toDown = $("#jsontext").val();
-    window.open("data:text/json;charset=utf-8," + escape(json))
+    console.log(typeof toDown);
+    const a = document.createElement("a");
+    const file = new Blob([toDown], { type: "text/plain" });
+    a.href = URL.createObjectURL(file);
+    a.download = "data.json";
+    a.click();
 });

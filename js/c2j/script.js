@@ -33,6 +33,7 @@ $('#csvfileinput').on('change', function () {
           }
           reader.readAsText(fileInput.files[0]);
       }
+      $("#filetypeWarn").html("");
   }
   else {
       $("#filetypeWarn").html("Only .csv files are accepted");
